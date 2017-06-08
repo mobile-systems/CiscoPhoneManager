@@ -10,6 +10,11 @@ class AddressBooksController < ApplicationController
   # GET /address_books/1
   # GET /address_books/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render :show, status: :created, location: @address_book }
+      format.xml { render @address_book.to_xml }
+    end
   end
 
   # GET /address_books/new
