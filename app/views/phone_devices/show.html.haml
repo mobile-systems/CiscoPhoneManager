@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Mac:
+  = @phone_device.mac
+%p
+  %strong Model:
+  = @phone_device.model
+%p
+  %strong Phone user:
+  = @phone_device.phone_user
+= link_to 'Edit', edit_phone_device_path(@phone_device)
+|
+= link_to 'Back', phone_devices_path

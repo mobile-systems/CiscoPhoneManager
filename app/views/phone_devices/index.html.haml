@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Listing Phone Devices
+%table
+  %thead
+    %tr
+      %th Mac
+      %th Model
+      %th Phone user
+      %th{:colspan => "3"}
+  %tbody
+    - @phone_devices.each do |phone_device|
+      %tr
+        %td= phone_device.mac
+        %td= phone_device.model
+        %td= phone_device.phone_user
+        %td= link_to 'Show', phone_device
+        %td= link_to 'Edit', edit_phone_device_path(phone_device)
+        %td= link_to 'Destroy', phone_device, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Phone device', new_phone_device_path

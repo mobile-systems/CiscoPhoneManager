@@ -1,0 +1,23 @@
+= form_for(@tech_user) do |f|
+  - if @tech_user.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@tech_user.errors.count, "error")
+        prohibited this tech_user from being saved:
+      %ul
+        - @tech_user.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :login
+    %br/
+    = f.text_field :login
+  .field
+    = f.label :password_digest
+    %br/
+    = f.text_field :password_digest
+  .actions
+    = f.submit

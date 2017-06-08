@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Listing Tech Users
+%table
+  %thead
+    %tr
+      %th Name
+      %th Login
+      %th Password digest
+      %th{:colspan => "3"}
+  %tbody
+    - @tech_users.each do |tech_user|
+      %tr
+        %td= tech_user.name
+        %td= tech_user.login
+        %td= tech_user.password_digest
+        %td= link_to 'Show', tech_user
+        %td= link_to 'Edit', edit_tech_user_path(tech_user)
+        %td= link_to 'Destroy', tech_user, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Tech user', new_tech_user_path

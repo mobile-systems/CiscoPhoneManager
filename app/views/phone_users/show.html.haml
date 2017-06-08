@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Last name:
+  = @phone_user.last_name
+%p
+  %strong First name:
+  = @phone_user.first_name
+%p
+  %strong Second name:
+  = @phone_user.second_name
+= link_to 'Edit', edit_phone_user_path(@phone_user)
+|
+= link_to 'Back', phone_users_path

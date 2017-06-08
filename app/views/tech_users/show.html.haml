@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @tech_user.name
+%p
+  %strong Login:
+  = @tech_user.login
+%p
+  %strong Password digest:
+  = @tech_user.password_digest
+= link_to 'Edit', edit_tech_user_path(@tech_user)
+|
+= link_to 'Back', tech_users_path

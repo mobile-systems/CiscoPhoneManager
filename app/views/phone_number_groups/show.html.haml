@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @phone_number_group.name
+= link_to 'Edit', edit_phone_number_group_path(@phone_number_group)
+|
+= link_to 'Back', phone_number_groups_path
